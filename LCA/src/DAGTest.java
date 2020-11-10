@@ -59,4 +59,15 @@ class DAGTest {
 		assertEquals(2, newDAG.edges());
 	}
 		
+	@Test
+	public void testinDegree(){
+		DAG newDAG= new DAG(5);
+		assertEquals("", -1, newDAG.indegree(-3));
+	}
+
+	@Test
+	public void testOutDegree(){
+		DAG newDAG = new DAG(5);
+		assertEquals("", -1, newDAG.outdegree(8));	
+	}
 }
