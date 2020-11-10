@@ -49,5 +49,14 @@ class DAGTest {
 		newDAG.addEdge(2, 3);
 		assertFalse(newDAG.hasCycle());
 	}
+	
+	@Test
+	public void testAddEdge(){
+		DAG newDAG = new DAG(5);
+		newDAG.addEdge(1, 2);
+		newDAG.addEdge(-3, -4);
+		newDAG.addEdge(2, 3);	
+		assertEquals(2, newDAG.edges());
+	}
 		
 }
