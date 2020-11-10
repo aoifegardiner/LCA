@@ -85,8 +85,8 @@ class LCATest {
 	
 	@Test
 	public void testForDAG() {
-		LCA tree = new LCA();
-		tree.root = new Node(1);
+	LCA tree = new LCA();
+	tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
         tree.root.left.left = new Node(4);
