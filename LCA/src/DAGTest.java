@@ -1,8 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +9,7 @@ class DAGTest {
 	@Test
 	public void testLCAforEmpty() {
 		DAG lca = new DAG(10);
-		assertEquals("Testing LCA is -1", -1, lca.findLCA(1, 2));
+		assertEquals(-1, lca.findLCA(1, 2));
 	}
 	
 	@Test
@@ -131,12 +129,6 @@ class DAGTest {
 		assertEquals(-1, lca3.findLCA(1, 3));
 
 	}
-	
-	/*@Test(expected=Exception.class)
-	public void exceptionTest(){
-		//Can't make a directed graph with less than 0 vertices
-		DAG newDAG = new DAG(-5);
-	}*/
 	
 	
 }
