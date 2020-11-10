@@ -1,4 +1,6 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -25,4 +27,27 @@ class DAGTest {
 		String ans = "[5, 6]";
 		assertEquals("",ans, newDAG.adj(4).toString());
 	}
+	
+	@Test
+	public void testCycle(){
+		DAG newDAG = new DAG(20);
+		newDAG.addEdge(0, 1);
+		newDAG.addEdge(1, 2);
+		newDAG.addEdge(2, 0);
+		newDAG.addEdge(2, 3);
+		newDAG.addEdge(3, 4);
+
+		newDAG.findCycle(0);
+		assertTrue(newDAG.hasCycle());
+	}
+	
+	@Test
+	public void testAcyclicGraph(){
+		DAG newDAG = new DAG(5);
+		newDAG.addEdge(0, 1);
+		newDAG.addEdge(1, 2);
+		newDAG.addEdge(2, 3);
+		assertFalse(newDAG.hasCycle());
+	}
+		
 }
